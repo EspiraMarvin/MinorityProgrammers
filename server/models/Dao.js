@@ -1,7 +1,8 @@
+const { Schema } = require('mongoose')
 const mongoose = require('mongoose')
 
 // DAOs schema
-const DaoSchema = new mongoose.Schema({
+const DaoSchema = new Schema({
         full_name: {
             type: String,
             required: [true, 'Please add a name'],
@@ -76,4 +77,38 @@ const DaoSchema = new mongoose.Schema({
     }
 )
 
-module.exports = mongoose.models.Dao || mongoose.model('Dao', DaoSchema )
+const SocialSchema = new Schema({
+    _id: {
+        type: String,
+        required: true
+    },
+    twitter_handle: {
+        type: String,
+        required: false
+    },
+    github_organization_handle: {
+        type: String,
+        required: false
+    },
+    telegram_handle: {
+        type: String,
+        required: false
+    },
+    linkedin_company_name: {
+        type: String,
+        required: false
+    },
+    discord_link: {
+        type: String,
+        required: false
+    },
+    twitter_followers: {
+        type: Number,
+        required: false
+    }
+})
+
+
+const Dao = mongoose.models.Dao || mongoose.model("Dao", DaoSchema)
+const Social = mongoose.models.Social || mongoose.model("Social", SocialSchema)
+module.exports = { Dao, Social }

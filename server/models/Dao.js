@@ -29,7 +29,8 @@ const DaoSchema = new Schema({
             type: String,
             enum : ['Protocol', 'Service', 'Grant', 'Media', 'Social', 'Investment', 'Platform', 'Collector'],
             message: '{VALUE} does not exist',
-            required: true
+            required: true,
+            default: 'Protocol'
         },
         governance_token_name: {
             type: String,

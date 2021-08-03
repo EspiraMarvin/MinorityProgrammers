@@ -23,40 +23,50 @@ const DaoSchema = new Schema({
          },
         logo_link: {
             type: String,
-            required: false
+            required: false,
+            default: 'https://cdn.vuetifyjs.com/images/lists/3.jpg'
         },
         category: {
             type: String,
             enum : ['Protocol', 'Service', 'Grant', 'Media', 'Social', 'Investment', 'Platform', 'Collector'],
             message: '{VALUE} does not exist',
-            required: true,
+            required: false,
             default: 'Protocol'
         },
         governance_token_name: {
             type: String,
-            required: true
+            required: false
+        },
+        governance_token_symbol: {
+            type: String,
+            required: false,
+            default: 'Our Symbol'
         },
         dao_structure: {
             type: String,
             enum : ['shares', 'gov_token', 'tbd'],
             message: '{VALUE} does not exist',
             required: true,
+            default: 'shares'
         },
         voting_process: {
             type: String,
-            required: true
+            required: false,
+            default: 'Election is done by board members'
         },
         tvl: {
             type: Number,
-            required: false
+            required: true,
         },
         tech_stack: {
             type: String,
-            required: true
+            required: false,
+            default: 'Reactjs, Next js & Nodejs'
         },
         notes: {
             type: String,
-            required: true
+            required: false,
+            default: 'This are our notes'
         },
         blockchain: {
             type: String,
@@ -66,7 +76,8 @@ const DaoSchema = new Schema({
                 'Tezos', 'EOSIO', 'Waves', 'Ripple'
             ],
             message: '{VALUE} does not exist',
-            required: true
+            required: true,
+            default: 'Ethereum'
         },
         headquarters: {
             type: String,
@@ -101,7 +112,7 @@ const SocialSchema = new Schema({
     },
     discord_link: {
         type: String,
-        required: false
+        required: false,
     },
     twitter_followers: {
         type: Number,

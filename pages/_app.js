@@ -1,16 +1,23 @@
 import Layout from '../components/layouts/Layout'
-import '../styles/globals.css'
 import Head from "next/head";
+
+// add bootstrap css
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import '../styles/globals.css'
+
+import {Container} from "react-bootstrap";
 
 function MyApp({ Component, pageProps }) {
   return (
       <>
-          <Head>
-              <link rel="shortcut icon" href="/favicon.ico" />
-          </Head>
+          <Container>
+              {/*<Head>*/}
+              {/*</Head>*/}
           <Layout>
             <Component {...pageProps} />
           </Layout>
+          </Container>
       </>
 
   )

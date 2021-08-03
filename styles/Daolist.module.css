@@ -6,5 +6,7 @@
     border-left: 8px solid #fff;
 }
 .single:hover {
-    border-left: 8px solid #4979ff;
+    border-left: 8px solid black;
+    /*border-left: 8px solid #4979ff;*/
+    text-decoration: none;
 }

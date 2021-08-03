@@ -19,6 +19,7 @@ const Canvas = () => {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <ListGroup as="ul">
+                        {/* eslint-disable-next-line @next/next/link-passhref */}
                         <Link href="/new">
                             <ListGroup.Item as="li" active>
                             Add New Dao
